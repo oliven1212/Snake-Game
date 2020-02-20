@@ -1,8 +1,8 @@
 class Fruit {
 
 void display(){
-circle(20,20,10);
-fill(0,255,0);
+fill(255,0,0);
+circle(random(20,width),random(20,height),20);
 }
 
 
