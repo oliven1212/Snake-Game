@@ -1,1 +1,2 @@
-int Snickers = 1;
+class Walls {
+} 
