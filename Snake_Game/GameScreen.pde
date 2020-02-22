@@ -6,4 +6,6 @@ void GameScreen() {
   if (Snakey.health <= 0) {
     EndScreen();
   }
+  
+  //Fruit.display();
 }

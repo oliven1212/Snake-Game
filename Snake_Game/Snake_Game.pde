@@ -15,9 +15,6 @@ void setup () {
   Snakey = new Snake(width/2, height/2, 1);
   frameRate(60);
 }
-void draw (){
-Fruit.display();
-}
 
 void draw () {
   //Checks for which screen is active and displays it
