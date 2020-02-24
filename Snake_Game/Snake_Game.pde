@@ -5,7 +5,7 @@ static final PVector playerPos2 = new PVector();
 PVector playerVel1 = new PVector();
 PVector playerVel2 = new PVector();
 float playerSpd = 1;
-int scl = 20;
+int scl = 40;
 
 //int that holds info about which screen to show
 int Screen = 0;
@@ -14,8 +14,8 @@ Snake1 Snakey1;
 Snake2 Snakey2;
 
 void setup () {
-  fullScreen();
-  //size(1015,600);
+  //fullScreen();
+  size(680,600);
   //Create a Snake with the following variables
   Snakey1 = new Snake1(width/2, height/2, 1);
   Snakey2 = new Snake2(width/2, height/2, 1);
@@ -31,7 +31,8 @@ void draw () {
   } else if (Screen == 2) {
     EndScreen();
   }
-
+  println(height);
+  println(width);
   Snakey1.draw();
   Snakey2.draw();
 } 

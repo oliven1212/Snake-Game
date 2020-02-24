@@ -13,8 +13,8 @@ class Snake1 {
     this.xPos1 = xPos1;
     this.yPos1 = yPos1;
     this.health1 = health1;
-    playerPos1.x = width/2;
-    playerPos1.y = height/2;
+    playerPos1.x = scl;
+    playerPos1.y = scl;
   }
 
   //Updates the Snake's properties
@@ -32,8 +32,8 @@ class Snake1 {
     playerPos1.x = playerPos1.x + playerVel1.x*scl;
     playerPos1.y = playerPos1.y + playerVel1.y*scl;   
 
-    playerPos1.x = constrain(playerPos1.x, 21, width-41);
-    playerPos1.y = constrain(playerPos1.y, 23, height-42);
+    playerPos1.x = constrain(playerPos1.x, scl, width-scl*2);
+    playerPos1.y = constrain(playerPos1.y, scl, height-scl*2);
   }
 
   void draw() {
@@ -44,7 +44,7 @@ class Snake1 {
 
     rect(playerPos1.x, playerPos1.y, scl, scl);
     fill(0, 255, 85);
-    circle(playerPos1.x + 5, playerPos1.y + 10, 5);
-    circle(playerPos1.x + 15, playerPos1.y + 10, 5);
+    circle(playerPos1.x + 10, playerPos1.y + 20, 10);
+    circle(playerPos1.x + 30, playerPos1.y + 20, 10);
   }
 } 
