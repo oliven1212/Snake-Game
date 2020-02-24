@@ -20,7 +20,7 @@ void setup () {
   Snakey1 = new Snake1(width/2, height/2, 1);
   Snakey2 = new Snake2(width/2, height/2, 1);
   Fruit = new Fruit();
-  frameRate(10);
+  frameRate(1000);
 }
 
 void draw () {
@@ -32,21 +32,22 @@ void draw () {
   } else if (Screen == 2) {
     EndScreen();
   }
-  println(height);
-  println(width);
+//println(height);
+//println(width);    
   Snakey1.draw();
   Snakey2.draw();
+  Fruit.display();
 } 
 
 void keyPressed() {
   final int k = keyCode;
 
   if (k == 'G') {
-    Snakey2.total = Snakey2.total + 1;
+    Snakey2.total = Snakey2.total + 4;          //gave it 4x the size increase cause we dont like to spam G
   }
 
   if (k == 'F') {
-    Snakey1.total = Snakey1.total + 1;
+    Snakey1.total = Snakey1.total + 4;          //gave it 4x the size increase cause we dont like to spam G
   }
 
 
