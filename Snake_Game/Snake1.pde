@@ -32,8 +32,8 @@ class Snake1 {
     playerPos1.x = playerPos1.x + playerVel1.x*scl;
     playerPos1.y = playerPos1.y + playerVel1.y*scl;   
 
-    playerPos1.x = constrain(playerPos1.x, scl, width-2*scl);
-    playerPos1.y = constrain(playerPos1.y, scl, height-2*scl);
+    playerPos1.x = constrain(playerPos1.x, 21, width-41);
+    playerPos1.y = constrain(playerPos1.y, 23, height-42);
   }
 
   void draw() {
