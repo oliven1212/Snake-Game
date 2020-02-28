@@ -20,7 +20,11 @@ void setup () {
   Snakey1 = new Snake1(width/2, height/2, 1);
   Snakey2 = new Snake2(width/2, height/2, 1);
   Fruit = new Fruit();
-  frameRate(1000);
+  frameRate(10);
+  
+  
+  Fruit.display();
+
 }
 
 void draw () {
@@ -36,7 +40,6 @@ void draw () {
 //println(width);    
   Snakey1.draw();
   Snakey2.draw();
-  Fruit.display();
 } 
 
 void keyPressed() {
