@@ -3,7 +3,7 @@ class Snake2 {
   float yPos2;
   int health2;
   ArrayList<PVector> tail = new ArrayList<PVector>();
-  int total = 0;
+  int total = 1;
 
 
 
@@ -13,8 +13,8 @@ class Snake2 {
     this.xPos2 = xPos2;
     this.yPos2 = yPos2;
     this.health2 = health2;
-    playerPos2.x = width-scl;
-    playerPos2.y = height-scl;
+    playerPos2.x = width-22;
+    playerPos2.y = height-22;
   }
 
   //Updates the Snake's properties
@@ -23,17 +23,25 @@ class Snake2 {
 
     if (total > 0) {
       if (total == tail.size() && !tail.isEmpty()) {
-        tail.remove(0);
+        //tail.remove(0);
       }
       tail.add(new PVector(playerPos2.x, playerPos2.y));
     }
+
+    
+    if (playerPos2.x <= 21 || playerPos2.y <= 21 || playerPos2.x >= width-21 || playerPos2.y >= height-21) {
+  
+    Screen = 2;
+  }
+
+
 
     playerPos2.add(playerVel2);
     playerPos2.x = playerPos2.x + playerVel2.x*scl;
     playerPos2.y = playerPos2.y + playerVel2.y*scl;   
 
-    playerPos2.x = constrain(playerPos2.x, scl, width-scl*2-25);
-    playerPos2.y = constrain(playerPos2.y, scl, height-scl*2-27);
+    playerPos2.x = constrain(playerPos2.x, scl, width-18);
+    playerPos2.y = constrain(playerPos2.y, scl, height-21);
   }
 
   void draw() {
@@ -41,10 +49,11 @@ class Snake2 {
     for (PVector v : tail) {
       rect(v.x, v.y, scl, scl);
     }
-
+    //The Face
     rect(playerPos2.x, playerPos2.y, scl, scl);
     fill(0, 255, 85);
-    circle(playerPos2.x + 10, playerPos2.y + 20, 10);
-    circle(playerPos2.x + 30, playerPos2.y + 20, 10);
+    //The Eyes
+    //circle(playerPos2.x + 10, playerPos2.y + 20, 10);
+    //circle(playerPos2.x + 30, playerPos2.y + 20, 10);
   }
 } 

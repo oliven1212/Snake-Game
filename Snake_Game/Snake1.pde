@@ -3,7 +3,7 @@ class Snake1 {
   float yPos1;
   int health1;
   ArrayList<PVector> tail = new ArrayList<PVector>();
-  int total = 0;
+  int total = 1;
 
 
 
@@ -13,8 +13,8 @@ class Snake1 {
     this.xPos1 = xPos1;
     this.yPos1 = yPos1;
     this.health1 = health1;
-    playerPos1.x = scl;
-    playerPos1.y = scl;
+    playerPos1.x = 22;
+    playerPos1.y = 22;
   }
 
   //Updates the Snake's properties
@@ -23,17 +23,25 @@ class Snake1 {
 
     if (total > 0) {
       if (total == tail.size() && !tail.isEmpty()) {
-        tail.remove(0);
+        //tail.remove(0);
       }
       tail.add(new PVector(playerPos1.x, playerPos1.y));
+      
     }
+    
+    
+    if (playerPos1.x <= 21 || playerPos1.y <= 21 || playerPos1.x >= width-21 || playerPos1.y >= height-21) {
+  
+    Screen = 2;
+  }
+    
 
     playerPos1.add(playerVel1);
     playerPos1.x = playerPos1.x + playerVel1.x*scl;
     playerPos1.y = playerPos1.y + playerVel1.y*scl;   
 
-    playerPos1.x = constrain(playerPos1.x, scl, width-scl*2-25);
-    playerPos1.y = constrain(playerPos1.y, scl, height-scl*2-27);
+    playerPos1.x = constrain(playerPos1.x, scl, width-18/*-scl*2-26*/);
+    playerPos1.y = constrain(playerPos1.y, scl, height-21);
   }
 
   void draw() {
@@ -44,7 +52,8 @@ class Snake1 {
 
     rect(playerPos1.x, playerPos1.y, scl, scl);
     fill(0, 255, 85);
-    circle(playerPos1.x + 10, playerPos1.y + 20, 10);
-    circle(playerPos1.x + 30, playerPos1.y + 20, 10);
+    //The Eyes
+    //circle(playerPos1.x + 10, playerPos1.y + 20, 10);
+    //circle(playerPos1.x + 30, playerPos1.y + 20, 10);
   }
 } 
