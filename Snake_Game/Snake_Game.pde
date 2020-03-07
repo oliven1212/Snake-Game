@@ -18,24 +18,14 @@ Fruit Fruit;
 
 void setup () {
   //fullScreen();
-  size(1040,680);
+  size(1040, 680);
   //Create a Snake with the following variables
-  Snakey1 = new Snake1(width/2, height/2, 1);
-  Snakey2 = new Snake2(width/2, height/2, 1);
+  //Snakey1 = new Snake1(width/2, height/2, 1);
+  //Snakey2 = new Snake2(width/2, height/2, 1);
   Fruit = new Fruit();
   frameRate(10);
 
-Fruit.display();
-
- /*
- fill(0,255,0);
- rect(0,0,1040,21);
- rect(0,0,21,680);
- rect(width-21,0,21,680);
- rect(0,height-21,1040,21);
- */
-  
-
+  Fruit.display();
 }
 
 void draw () {
@@ -47,18 +37,15 @@ void draw () {
   } else if (Screen == 2) {
     EndScreen();
   }
-//println(height);
-//println(width);    
-  Snakey1.draw();
-  Snakey2.draw();
   println(playerPos1);
 } 
 
 void keyPressed() {
   final int k = keyCode;
 
- if (k == 'J') {
-    Screen = 2;          
+
+  if (k == 'J') {
+    Screen = 2;
   }
 
 

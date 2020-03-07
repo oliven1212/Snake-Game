@@ -5,22 +5,19 @@ class Snake2 {
   ArrayList<PVector> tail = new ArrayList<PVector>();
   int total = 1;
 
-
-
-
   //Constructor
   Snake2(float xPos2, float yPos2, int health2) {
     this.xPos2 = xPos2;
     this.yPos2 = yPos2;
     this.health2 = health2;
-    playerPos2.x = width-22;
-    playerPos2.y = height-22;
+    playerPos2.x = width-32;
+    playerPos2.y = height-32;
   }
+  
+  
 
   //Updates the Snake's properties
   void update() {
-
-
     if (total > 0) {
       if (total == tail.size() && !tail.isEmpty()) {
         //tail.remove(0);
@@ -29,7 +26,7 @@ class Snake2 {
     }
 
     
-    if (playerPos2.x <= 21 || playerPos2.y <= 21 || playerPos2.x >= width-21 || playerPos2.y >= height-21) {
+    if (playerPos2.x <= 21 || playerPos2.y <= 21 || playerPos2.x >= width-31 || playerPos2.y >= height-31) {
   
     Screen = 2;
   }

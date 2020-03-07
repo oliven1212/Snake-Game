@@ -5,9 +5,6 @@ class Snake1 {
   ArrayList<PVector> tail = new ArrayList<PVector>();
   int total = 1;
 
-
-
-
   //Constructor
   Snake1(float xPos1, float yPos1, int health1) {
     this.xPos1 = xPos1;
@@ -16,25 +13,22 @@ class Snake1 {
     playerPos1.x = 22;
     playerPos1.y = 22;
   }
+  
+  
 
   //Updates the Snake's properties
   void update() {
-
-
     if (total > 0) {
       if (total == tail.size() && !tail.isEmpty()) {
         //tail.remove(0);
       }
       tail.add(new PVector(playerPos1.x, playerPos1.y));
-      
     }
-    
-    
     if (playerPos1.x <= 21 || playerPos1.y <= 21 || playerPos1.x >= width-21 || playerPos1.y >= height-21) {
-  
-    Screen = 2;
-  }
-    
+      Screen = 2;
+    }
+
+
 
     playerPos1.add(playerVel1);
     playerPos1.x = playerPos1.x + playerVel1.x*scl;
