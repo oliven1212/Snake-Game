@@ -1,3 +1,6 @@
+import processing.core.PVector;
+import processing.core.PVector;
+import processing.core.PVector;
 //Anton, Mohammad and Valdemar 2d1 "Error 404". Snake Game Project.
 
 static final PVector playerPos1 = new PVector();
@@ -14,7 +17,7 @@ int Walls;
 
 Snake1 Snakey1; 
 Snake2 Snakey2;
-Fruit Fruit;
+
 
 void setup () {
   //fullScreen();
@@ -22,10 +25,7 @@ void setup () {
   //Create a Snake with the following variables
   //Snakey1 = new Snake1(width/2, height/2, 1);
   //Snakey2 = new Snake2(width/2, height/2, 1);
-  Fruit = new Fruit();
   frameRate(10);
-
-  Fruit.display();
 }
 
 void draw () {
@@ -37,7 +37,7 @@ void draw () {
   } else if (Screen == 2) {
     EndScreen();
   }
-  println(playerPos1);
+  //println(playerPos1);
 } 
 
 void keyPressed() {
@@ -59,40 +59,48 @@ void keyPressed() {
 
 
   if      (k == 'A') {
-    playerVel1.x = -playerSpd; 
-    playerVel1.y = 0;
-    //Snakey1.total = Snakey1.total + 1;  
-    //println("left");
+    if (playerVel1.x <= 0) { 
+      playerVel1.x = -playerSpd; 
+      playerVel1.y = 0;
+    }
   } else if (k == 'D') { 
-    playerVel1.x =  playerSpd;
-    playerVel1.y =  0;
-    //Snakey1.total = Snakey1.total + 1;  
-    //println("right");
-  } else if (k == 'W') { 
-    playerVel1.y = -playerSpd;
-    playerVel1.x =  0;
-    //Snakey1.total = Snakey1.total + 1;  
-    //println("up");
+    if (playerVel1.x >= 0) { 
+      playerVel1.x =  playerSpd;
+      playerVel1.y =  0;
+    }
+  } else if (k == 'W') {
+    if (playerVel1.y <= 0) { 
+      playerVel1.y = -playerSpd;
+      playerVel1.x =  0;
+    }
   } else if (k == 'S') {
-    playerVel1.y =  playerSpd;
-    playerVel1.x =  0;
-    //Snakey1.total = Snakey1.total + 1;  
-    //println("down");
+    if (playerVel1.y >= 0) { 
+      playerVel1.y =  playerSpd;
+      playerVel1.x =  0;
+    }
   }
 
 
   if      (k == LEFT) {
-    playerVel2.x = -playerSpd; 
-    playerVel2.y = 0;
+    if (playerVel2.x <= 0) { 
+      playerVel2.x = -playerSpd; 
+      playerVel2.y = 0;
+    }
   } else if (k == RIGHT) { 
-    playerVel2.x =  playerSpd;
-    playerVel2.y =  0;
-  } else if (k == UP) { 
-    playerVel2.y = -playerSpd;
-    playerVel2.x =  0;
+    if (playerVel2.x >= 0) { 
+      playerVel2.x =  playerSpd;
+      playerVel2.y =  0;
+    }
+  } else if (k == UP) {
+    if (playerVel2.y <= 0) { 
+      playerVel2.y = -playerSpd;
+      playerVel2.x =  0;
+    }
   } else if (k == DOWN) {
-    playerVel2.y =  playerSpd;
-    playerVel2.x =  0;
+    if (playerVel2.y >= 0) { 
+      playerVel2.y =  playerSpd;
+      playerVel2.x =  0;
+    }
   }
 }
 

@@ -30,7 +30,7 @@ void EndScreen() {
 void RestartGame() {
   //Creates new snakes
   newSnakes();
-  
+
   //Resets stats and position of Snake 1
   Snakey1.health1 = 1;
   playerVel1.x = 0; 
@@ -38,7 +38,7 @@ void RestartGame() {
   playerPos1.x = 22;
   playerPos1.y = 22;
   Snakey1.total = 1;
-  
+
   //Resets stats and position of Snake 2
   Snakey2.health2 = 1;
   playerVel2.x = 0; 
@@ -46,6 +46,6 @@ void RestartGame() {
   playerPos2.x = width-32;
   playerPos2.y = height-32;
   Snakey1.total = 2;
-  
+
   Screen = 1;
 }
