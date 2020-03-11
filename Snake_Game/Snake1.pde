@@ -18,7 +18,7 @@ class Snake1 {
 
   //Updates the Snake's properties
   void update() {
-    
+
 
 
     if (total > 0) {
@@ -30,26 +30,29 @@ class Snake1 {
 
 
     if (playerPos1.x <= 21 || playerPos1.y <= 21 || playerPos1.x >= width-21 || playerPos1.y >= height-21) {
+      win = 2;
       Screen = 2;
     }
 
     if (playerPos2.x == playerPos1.x && playerPos2.y == playerPos1.y) {
-
+      win = 0;
       Screen = 2;
     }
 
     for (int i = 0; i < Snakey2.tail.size(); i++) {
       if (playerPos1.x == Snakey2.tail.get(i).x && playerPos1.y == Snakey2.tail.get(i).y ) {
+        win = 2;
         Screen = 2;
       }
     }
-    
+
     for (int i = 0; i < tail.size()-1; i++) {
       if (playerPos1.x == tail.get(i).x && playerPos1.y == tail.get(i).y ) {
+        win = 2;
         Screen = 2;
       }
     }
-    
+
     playerPos1.add(playerVel1);
     playerPos1.x = playerPos1.x + playerVel1.x*scl;
     playerPos1.y = playerPos1.y + playerVel1.y*scl;   

@@ -15,6 +15,8 @@ int Screen = 0;
 
 int Walls;
 
+int win = 0;
+
 Snake1 Snakey1; 
 Snake2 Snakey2;
 
