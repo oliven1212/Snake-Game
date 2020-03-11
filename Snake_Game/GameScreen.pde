@@ -19,7 +19,7 @@ void GameScreen() {
     EndScreen();
   }
 
-  //Fruit.display();
+
 
   //Draws walls
   noStroke();
@@ -30,7 +30,7 @@ void GameScreen() {
   rect(0, height-21, 1019, 21);
 }
 
-void newSnakes(){
-Snakey1 = new Snake1(width/2, height/2, 1);
+void newSnakes() {
+  Snakey1 = new Snake1(width/2, height/2, 1);
   Snakey2 = new Snake2(width/2, height/2, 1);
 }

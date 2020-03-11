@@ -8,7 +8,7 @@ void StartScreen() {
   //Creates new snakes
   newSnakes();
   Screen = 0;
-  
+
   //Calculating if mouse has just been pressed
   boolean mouseJustPressed = mousePressed & !lastMousePressed;
   lastMousePressed = mousePressed;

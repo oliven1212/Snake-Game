@@ -18,6 +18,8 @@ class Snake2 {
 
   //Updates the Snake's properties
   void update() {
+    playerVel2.x = -playerSpd;
+    
     if (total > 0) {
       if (total == tail.size() && !tail.isEmpty()) {
         //tail.remove(0);
@@ -34,6 +36,21 @@ class Snake2 {
 
       Screen = 2;
     }
+
+        for (int i = 0; i < Snakey1.tail.size(); i++) {
+      if (playerPos2.x == Snakey1.tail.get(i).x && playerPos2.y == Snakey1.tail.get(i).y ) {
+        Screen = 2;
+      }
+    }
+    
+    for (int i = 0; i < tail.size()-1; i++) {
+      if (playerPos2.x == tail.get(i).x && playerPos2.y == tail.get(i).y ) {
+        Screen = 2;
+      }
+    }
+
+
+
 
 
 

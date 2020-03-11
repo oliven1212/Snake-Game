@@ -18,6 +18,9 @@ class Snake1 {
 
   //Updates the Snake's properties
   void update() {
+    playerVel1.x = playerSpd;
+
+
     if (total > 0) {
       if (total == tail.size() && !tail.isEmpty()) {
         //tail.remove(0);
@@ -35,8 +38,18 @@ class Snake1 {
       Screen = 2;
     }
 
-
-
+    for (int i = 0; i < Snakey2.tail.size(); i++) {
+      if (playerPos1.x == Snakey2.tail.get(i).x && playerPos1.y == Snakey2.tail.get(i).y ) {
+        Screen = 2;
+      }
+    }
+    
+    for (int i = 0; i < tail.size()-1; i++) {
+      if (playerPos1.x == tail.get(i).x && playerPos1.y == tail.get(i).y ) {
+        Screen = 2;
+      }
+    }
+    
     playerPos1.add(playerVel1);
     playerPos1.x = playerPos1.x + playerVel1.x*scl;
     playerPos1.y = playerPos1.y + playerVel1.y*scl;   
@@ -53,8 +66,5 @@ class Snake1 {
 
     rect(playerPos1.x, playerPos1.y, scl, scl);
     fill(0, 255, 85);
-    //The Eyes
-    //circle(playerPos1.x + 10, playerPos1.y + 20, 10);
-    //circle(playerPos1.x + 30, playerPos1.y + 20, 10);
   }
 } 
