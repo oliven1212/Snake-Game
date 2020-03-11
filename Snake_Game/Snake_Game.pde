@@ -27,7 +27,7 @@ void setup () {
   //Create a Snake with the following variables
   //Snakey1 = new Snake1(width/2, height/2, 1);
   //Snakey2 = new Snake2(width/2, height/2, 1);
-  frameRate(10);
+  frameRate(30);
 }
 
 void draw () {
@@ -44,21 +44,6 @@ void draw () {
 
 void keyPressed() {
   final int k = keyCode;
-
-
-  if (k == 'J') {
-    Screen = 2;
-  }
-
-
-  if (k == 'G') {
-    Snakey2.total = Snakey2.total + 4;          //gave it 4x the size increase cause we dont like to spam G
-  }
-
-  if (k == 'F') {
-    Snakey1.total = Snakey1.total + 4;          //gave it 4x the size increase cause we dont like to spam G
-  }
-
 
   if      (k == 'A') {
     if (playerVel1.x <= 0) { 
