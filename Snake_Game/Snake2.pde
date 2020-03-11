@@ -13,8 +13,8 @@ class Snake2 {
     playerPos2.x = width-32;
     playerPos2.y = height-32;
   }
-  
-  
+
+
 
   //Updates the Snake's properties
   void update() {
@@ -25,11 +25,15 @@ class Snake2 {
       tail.add(new PVector(playerPos2.x, playerPos2.y));
     }
 
-    
+
     if (playerPos2.x <= 21 || playerPos2.y <= 21 || playerPos2.x >= width-31 || playerPos2.y >= height-31) {
-  
-    Screen = 2;
-  }
+      Screen = 2;
+    }
+
+    if (playerPos2.x == playerPos1.x && playerPos2.y == playerPos1.y) {
+
+      Screen = 2;
+    }
 
 
 
