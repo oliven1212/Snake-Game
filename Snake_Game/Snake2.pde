@@ -10,15 +10,15 @@ class Snake2 {
     this.xPos2 = xPos2;
     this.yPos2 = yPos2;
     this.health2 = health2;
-    playerPos2.x = width-32;
-    playerPos2.y = height-32;
+    playerPos2.x = width-23*scl;
+    playerPos2.y = height/2;
   }
 
 
 
   //Updates the Snake's properties
   void update() {
-    playerVel2.x = -playerSpd;
+    
     
     if (total > 0) {
       if (total == tail.size() && !tail.isEmpty()) {

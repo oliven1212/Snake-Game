@@ -10,15 +10,15 @@ class Snake1 {
     this.xPos1 = xPos1;
     this.yPos1 = yPos1;
     this.health1 = health1;
-    playerPos1.x = 22;
-    playerPos1.y = 22;
+    playerPos1.x = 22*scl;
+    playerPos1.y = height/2;
   }
 
 
 
   //Updates the Snake's properties
   void update() {
-    playerVel1.x = playerSpd;
+    
 
 
     if (total > 0) {

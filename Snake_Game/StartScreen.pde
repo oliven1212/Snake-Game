@@ -17,6 +17,8 @@ void StartScreen() {
   StartGameButton = new Button(width/4, height/12, 520, 100, 255, 255, "START GAME", 70, 0, 0, 150, 50);
   if (StartGameButton.isButtonPressed(mouseX, mouseY, mouseJustPressed, StartGameButton) == true) {
     Screen = 1;
+    playerVel1.x = playerSpd;
+    playerVel2.x = -playerSpd;
   }
   //Updates the button
   StartGameButton.Update();

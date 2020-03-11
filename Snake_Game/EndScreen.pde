@@ -35,17 +35,19 @@ void RestartGame() {
   Snakey1.health1 = 1;
   playerVel1.x = 0; 
   playerVel1.y = 0;
-  playerPos1.x = 22;
-  playerPos1.y = 22;
+  playerPos1.x = 22*scl;
+  playerPos1.y = height/2;
   Snakey1.total = 1;
+  playerVel1.x = playerSpd;
 
   //Resets stats and position of Snake 2
   Snakey2.health2 = 1;
   playerVel2.x = 0; 
   playerVel2.y = 0;
-  playerPos2.x = width-32;
-  playerPos2.y = height-32;
+  playerPos2.x = width-23*scl;
+  playerPos2.y = height/2;
   Snakey1.total = 2;
+  playerVel2.x = -playerSpd;
 
   Screen = 1;
 }
