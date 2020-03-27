@@ -20,7 +20,6 @@ void GameScreen() {
   }
 
 
-
   //Draws walls
   noStroke();
   fill(0, 0, 0);

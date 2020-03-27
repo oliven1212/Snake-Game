@@ -6,22 +6,33 @@ Button RetryButton;
 int lB = 300;
 int hB = 125;
 
+//Points and background color
+int Redpoints = 0;
+int Bluepoints = 0;
+int[] Red = {255, 0, 0};
+int[] Blue = {0, 0, 255};
+int[] current = {0, 0, 0};
+
+
 void EndScreen() {
   Screen = 2;
-  background(0);
+  background(current[0], current[1], current[2]);
 
   if (win == 1) {
-    background(255, 0, 0);
+    Redpoints=Redpoints+1;   
+    win = 0;
+    current=Red;
     GameOverButton = new Button(width/2-lB/2, height/2-hB, lB, hB, 255, 255, "Red Won!", 50, 0, 0, 150, 50);
     GameOverButton.Update();
   }
   if (win == 2) {
-    background(0, 0, 255);
+    Bluepoints=Bluepoints+1;
+    win = 0;
+    current=Blue;
+
     GameOverButton = new Button(width/2-lB/2, height/2-hB, lB, hB, 255, 255, "Blue Won!", 50, 0, 0, 150, 50);
     GameOverButton.Update();
   }
-
-
 
   //Calculating if mouse has just been pressed
   boolean mouseJustPressed = mousePressed & !lastMousePressed;

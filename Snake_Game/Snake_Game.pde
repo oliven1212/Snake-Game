@@ -39,6 +39,11 @@ void draw () {
   } else if (Screen == 2) {
     EndScreen();
   }
+  PFont f;
+  f = createFont("Arial", 20, true);
+  textFont(f, 20);
+  text("Blue Score = "+Bluepoints, 125, 70);
+  text("Red Score = "+Redpoints, 125, 95);
   //println(playerPos1);
 } 
 
