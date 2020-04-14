@@ -2,23 +2,39 @@ void GameScreen() {
   Screen = 1;
   background(255);
 
+
   //Draws the snakes
   Snakey1.draw();
   Snakey2.draw();
 
+  PFont f;
+  f = createFont("Arial", 20, true);
+  textFont(f, 20);
+  fill(0);
+  text("Score", width/2, 70);
+  fill(255,0,0);
+  text(Redpoints, width/2 - 9, 95);
+  fill(0);
+  text("-", width/2, 95);
+  fill(0,0,255);
+  text(Bluepoints, width/2 + 10, 95);
+  
 
-  //Checks if Snake1 dies and displays the EndScreen
+  //Updates snakes
   Snakey1.update();
-  if (Snakey1.health1 <= 0) {
-    EndScreen();
-  }
-
-  //Checks if Snake2 dies and displays the EndScreen
   Snakey2.update();
-  if (Snakey2.health2 <= 0) {
-    EndScreen();
-  }
 
+
+  if (Bluepoints >= PointGoal) {
+    Screen = 3;
+    current = Blue;
+  } 
+
+
+  if (Redpoints >= PointGoal) {
+    Screen = 3;
+    current = Red;
+  } 
 
   //Draws walls
   noStroke();

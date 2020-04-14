@@ -13,44 +13,37 @@ int[] Red = {255, 0, 0};
 int[] Blue = {0, 0, 255};
 int[] current = {0, 0, 0};
 
+String Winner;
 
 void EndScreen() {
-  Screen = 2;
-  background(current[0], current[1], current[2]);
+  //Screen = 2;
+  background(0);
+
+  if (Bluepoints < PointGoal || Redpoints < PointGoal) {
+    RestartGame();
+  } 
 
   if (win == 1) {
-    Redpoints=Redpoints+1;   
+    Redpoints = Redpoints + 1;   
     win = 0;
-    current=Red;
-    GameOverButton = new Button(width/2-lB/2, height/2-hB, lB, hB, 255, 255, "Red Won!", 50, 0, 0, 150, 50);
-    GameOverButton.Update();
+    current = Red;
+    Winner = "Red Won";
   }
   if (win == 2) {
-    Bluepoints=Bluepoints+1;
+    Bluepoints = Bluepoints + 1;
     win = 0;
-    current=Blue;
-
-    GameOverButton = new Button(width/2-lB/2, height/2-hB, lB, hB, 255, 255, "Blue Won!", 50, 0, 0, 150, 50);
-    GameOverButton.Update();
+    current = Blue;
+    Winner = "Blue Won";
+  }
+  
+  if (Redpoints == PointGoal) {
+    background(255,0,0);  
   }
 
-  //Calculating if mouse has just been pressed
-  boolean mouseJustPressed = mousePressed & !lastMousePressed;
-  lastMousePressed = mousePressed;
-
-  noStroke();
-  //Button that displays Game Over
-  if (win == 0) {
-    GameOverButton = new Button(width/2-lB/2, height/2-hB, lB, hB, 255, 255, "GAME OVER", 50, 0, 0, 150, 50);
-    GameOverButton.Update();
+if (Bluepoints == PointGoal) {
+    background(0,0,255);  
   }
 
-  //Button to restart game
-  RetryButton = new Button(width/2-lB/2, height/2, lB, hB/2, 255, 255, "Retry", 40, 0, 0, 150, 50);
-  if (RetryButton.isButtonPressed(mouseX, mouseY, mouseJustPressed, RetryButton) == true) {
-    RestartGame();
-  }
-  RetryButton.Update();
 }
 
 void RestartGame() {
@@ -72,8 +65,37 @@ void RestartGame() {
   playerVel2.y = 0;
   playerPos2.x = width-23*scl;
   playerPos2.y = height/2;
-  Snakey1.total = 2;
+  Snakey2.total = 1;
   playerVel2.x = -playerSpd;
 
   Screen = 1;
+}
+
+
+void EndScreenElements() {
+
+  //Calculating if mouse has just been pressed
+  boolean mouseJustPressed = mousePressed & !lastMousePressed;
+  lastMousePressed = mousePressed;
+  
+  noStroke();
+  //Button that displays Game Over
+  if (win == 0) {
+    GameOverButton = new Button(width/2-lB/2, height/2-hB, lB, hB, 255, 255, Winner, 50, 0, 0, 150, 50);
+    GameOverButton.Update();
+  }
+
+  //Button to restart game
+  RetryButton = new Button(width/2-lB/2, height/2, lB, hB/2, 255, 255, "Retry", 40, 0, 0, 150, 50);
+  if (RetryButton.isButtonPressed(mouseX, mouseY, mouseJustPressed, RetryButton) == true) {
+    Bluepoints = 0;
+    Redpoints = 0;
+    RestartGame();
+  }
+  RetryButton.Update();
+
+  PFont f;
+  f = createFont("Arial", 20, true);
+  textFont(f, 100);
+  text(Redpoints + "-" + Bluepoints, width/2, 100);
 }

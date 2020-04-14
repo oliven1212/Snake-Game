@@ -1,6 +1,3 @@
-import processing.core.PVector;
-import processing.core.PVector;
-import processing.core.PVector;
 //Anton, Mohammad and Valdemar 2d1 "Error 404". Snake Game Project.
 
 static final PVector playerPos1 = new PVector();
@@ -17,6 +14,9 @@ int Walls;
 
 int win = 0;
 
+//The amount of wins needed to finish the game
+int PointGoal = 3;
+
 Snake1 Snakey1; 
 Snake2 Snakey2;
 
@@ -24,10 +24,7 @@ Snake2 Snakey2;
 void setup () {
   //fullScreen();
   size(1033, 681);
-  //Create a Snake with the following variables
-  //Snakey1 = new Snake1(width/2, height/2, 1);
-  //Snakey2 = new Snake2(width/2, height/2, 1);
-  frameRate(30);
+  frameRate(20);
 }
 
 void draw () {
@@ -38,13 +35,9 @@ void draw () {
     GameScreen();
   } else if (Screen == 2) {
     EndScreen();
+  } else if (Screen == 3) {
+    EndScreenElements();
   }
-  PFont f;
-  f = createFont("Arial", 20, true);
-  textFont(f, 20);
-  text("Blue Score = "+Bluepoints, 125, 70);
-  text("Red Score = "+Redpoints, 125, 95);
-  //println(playerPos1);
 } 
 
 void keyPressed() {
